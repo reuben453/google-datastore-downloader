@@ -13,6 +13,9 @@ This assumes you already have [rvm](https://rvm.io) up and running.
 - Install the required ruby version if rvm complains that it is not available: `rvm install ruby-2.x.x`
 - Run this command to install the bundler gem: `gem install bundler`
 - Use bundler to install dependencies: `bundle install`
+
+## Execute
+
 - Run the script using:  
 `DATASTORE_PROJECT=your-project-id DATASTORE_KEYFILE='path to keyfile.json' ruby datastore_downloader.rb "select * from kind limit 10"`  
 
@@ -20,6 +23,16 @@ This assumes you already have [rvm](https://rvm.io) up and running.
 
     DATASTORE_KEYFILE is the path to the json file which contains credentials of a
     user/service account with permissions to read from google datastore.
+
+- You can also provide the credentials json directly as an environment variable.
+
+    `DATASTORE_PROJECT=your-project-id DATASTORE_KEYFILE_JSON='credentials json' ruby datastore_downloader.rb "select * from kind limit 10"`
+
+- You can also build a docker image and run it:
+
+    `docker build -t google-datastore-downloader .`
+
+    `docker run -e DATASTORE_PROJECT=project-id -e DATASTORE_KEYFILE_JSON='creds json' -it google-datastore-downloader "select * from table1 limit 10"`
 
 ## Current Limitations
 
