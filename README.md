@@ -40,5 +40,3 @@ This assumes you already have [rvm](https://rvm.io) up and running.
 
 - This script will throw an exception if all the data being downloaded does not have exactly the same column names.  
 This can happen when downloading entities of different kinds together.
-
-- Will not work well with large data sets since all the data is held in memory.
