@@ -28,9 +28,11 @@ This assumes you already have [rvm](https://rvm.io) up and running.
 
     `DATASTORE_PROJECT=your-project-id DATASTORE_KEYFILE_JSON='credentials json' ruby datastore_downloader.rb "select * from kind limit 10"`
 
-- You can also build a docker image and run it:
+- You can also build/download a docker image and run it:
 
-    `docker build -t google-datastore-downloader .`
+    Build it using: `docker build -t google-datastore-downloader .`
+
+    Or download it from dockerhub: `docker pull reuben453/google-datastore-downloader`
 
     `docker run -e DATASTORE_PROJECT=project-id -e DATASTORE_KEYFILE_JSON='creds json' -it google-datastore-downloader "select * from table1 limit 10"`
 
