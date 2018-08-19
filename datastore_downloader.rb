@@ -37,7 +37,7 @@ catch :foreverloop do
 
         # Make sure the columns that this row has is the same as the columns of the first row
         if temp_hash.keys.sort != column_names.sort
-          raise "All values do not have the same columns. Columns of 1st value: #{column_names.sort}, Columns of #{index+1} value: #{temp_hash.keys.sort}"
+          raise "All rows do not have the same columns. Columns of 1st row: #{column_names.sort}, Columns of #{index+1} row: #{temp_hash.keys.sort}"
         end
 
         # Add each column of this row in the same order as the csv header row
