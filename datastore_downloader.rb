@@ -55,7 +55,7 @@ catch :foreverloop do
     puts s
 
     # If there was a limit set in the query, reduce the limit and check if we need to continue.
-    if raw_pkts.query.limit.value > 0
+    if !raw_pkts.query.limit.nil? && raw_pkts.query.limit.value > 0
       # Reduce the limit by the number of rows we got in the last run
       raw_pkts.query.limit.value -= raw_pkts.length
 
